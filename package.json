@@ -1,0 +1,33 @@
+{
+	"name": "project",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"clean": "sh clean.sh"
+	},
+	"dependencies": {
+		"next": "latest",
+		"react": "latest",
+		"react-dom": "latest"
+	},
+	"devDependencies": {
+		"@babel/core": "latest",
+		"@babel/eslint-parser": "latest",
+		"@netlify/plugin-nextjs": "latest",
+		"@next/eslint-plugin-next": "latest",
+		"@types/node": "latest",
+		"@types/react": "latest",
+		"@types/react-dom": "latest",
+		"@typescript-eslint/eslint-plugin": "latest",
+		"babel-plugin-inline-react-svg": "latest",
+		"babel-plugin-module-resolver": "latest",
+		"eslint": "latest",
+		"eslint-config-next": "latest",
+		"sass": "latest",
+		"typescript": "latest"
+	}
+}

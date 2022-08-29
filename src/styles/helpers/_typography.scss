@@ -1,0 +1,48 @@
+@mixin font($size: 16px, $lh: 1.12, $weight: 400) {
+	& {
+		font-size: $size;
+		line-height: $lh;
+		font-weight: $weight;
+	}
+}
+
+@mixin capitalize {
+	& {
+		text-transform: capitalize;
+	}
+}
+
+@mixin uppercase {
+	& {
+		text-transform: uppercase;
+	}
+}
+
+@mixin h1 {
+	@include font(36px, 40px, 700);
+}
+
+@mixin h2 {
+	@include font(24px, 27px, 400);
+}
+
+@mixin h3 {
+	@include font(16px, 1.6, 400);
+	@include uppercase;
+}
+
+@mixin h4 {
+	@include font(16px, 1.6, 400);
+}
+
+@mixin h5 {
+	@include font(14px, 1.6, 400);
+}
+
+@mixin h6 {
+	@include font(12px, 1.6, 400);
+}
+
+@mixin text {
+	@include font(16px, 1.12, 400);
+}

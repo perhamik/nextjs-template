@@ -1,0 +1,60 @@
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	max-width: 100vw;
+}
+
+* {
+	&,
+	&::before,
+	&::after {
+		padding: 0;
+		margin: 0;
+		background-repeat: no-repeat;
+		background-position: center;
+		box-sizing: border-box;
+	}
+
+	&::before,
+	&::after {
+		transition: inherit;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+button,
+input,
+select,
+textarea {
+	appearance: none;
+	border: none;
+	outline: none;
+	background-color: transparent;
+}
+
+a,
+button,
+select,
+summary {
+	cursor: pointer;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+option,
+p,
+span {
+	font-size: 1rem;
+}
+
+input,
+textarea {
+	resize: none;
+}

@@ -1,0 +1,9 @@
+@forward 'colors';
+@forward 'reset';
+
+html {
+	&,
+	* {
+		font-family: sans-serif;
+	}
+}
