@@ -1,4 +1,4 @@
 const Layout = () => {
-	return 0
+	return null
 }
 export {Layout}

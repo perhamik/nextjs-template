@@ -1,7 +1,7 @@
-import {setVH} from './setWindowProps'
+import {dateFormat, dateTimeFormat, getDateFromString, getFormatDateString} from './date'
 import {throttle} from './debounce'
-import {extractCategoryFromPath, transformString, deepEqualsString, equalsString} from './stringTools'
-import {getDateFromString, getFormatDateString, dateFormat, dateTimeFormat} from './date'
+import {setVH} from './setWindowProps'
+import {deepEqualsString, equalsString, extractCategoryFromPath, transformString} from './stringTools'
 
 export {
 	setVH,

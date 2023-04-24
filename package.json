@@ -1,33 +1,41 @@
 {
 	"name": "project",
-	"version": "1.0.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint",
-		"clean": "sh clean.sh"
-	},
+	"version": "1.0",
+	"author": "Denys Yaroshenko <denys.yaroshenko.mail@gmail.com> (https://github.com/perhamik/)",
+	"license": "ISC",
 	"dependencies": {
 		"next": "latest",
 		"react": "latest",
 		"react-dom": "latest"
 	},
 	"devDependencies": {
-		"@babel/core": "latest",
-		"@babel/eslint-parser": "latest",
-		"@netlify/plugin-nextjs": "latest",
-		"@next/eslint-plugin-next": "latest",
+		"@trivago/prettier-plugin-sort-imports": "latest",
 		"@types/node": "latest",
 		"@types/react": "latest",
 		"@types/react-dom": "latest",
-		"@typescript-eslint/eslint-plugin": "latest",
-		"babel-plugin-inline-react-svg": "latest",
-		"babel-plugin-module-resolver": "latest",
+		"bun-framework-next": "latest",
+		"bun-types": "latest",
 		"eslint": "latest",
 		"eslint-config-next": "latest",
-		"sass": "latest",
+		"prettier": "latest",
 		"typescript": "latest"
+	},
+	"scripts": {
+		"clean": "sh clean.sh",
+		"start": "next start",
+		"dev": "next dev",
+		"dev:bun": "bun dev",
+		"build": "next build",
+		"pretty": "prettier --write .",
+		"lint": "next lint",
+		"typecheck": "tsc",
+		"docker:build": "docker build -t next-build .",
+		"docker:run": "docker run --name project-dev -dp 3000:3000 next-build",
+		"docker:stop": "docker stop project-dev",
+		"docker:rm": "docker rm project-dev",
+		"docker": "yarn docker:build && yarn docker:run"
+	},
+	"config": {
+		"port": "3000"
 	}
 }

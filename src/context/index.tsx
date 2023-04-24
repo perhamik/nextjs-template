@@ -1,5 +1,5 @@
-import React, {createContext, Dispatch, SetStateAction, useMemo, useState} from 'react'
 import {NextRouter, useRouter} from 'next/router'
+import React, {Dispatch, SetStateAction, createContext, useMemo, useState} from 'react'
 
 type ContextType = {
 	router: NextRouter

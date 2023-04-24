@@ -1,4 +1,5 @@
 import {useEffect} from 'react'
+
 import {throttle} from '../utils/debounce'
 
 export default function useWindowSize(func = () => {}) {

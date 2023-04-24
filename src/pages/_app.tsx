@@ -1,8 +1,9 @@
-import React from 'react'
 import type {AppProps} from 'next/app'
+import React from 'react'
+
 import {useWindowSize} from '../hooks'
-import {setVH} from '../utils'
 import '../styles/main.scss'
+import {setVH} from '../utils'
 
 function MyApp({Component, pageProps}: AppProps) {
 	useWindowSize(() => {
