@@ -1,8 +1,22 @@
 {
-	"name": "project",
+	"name": "next-js-template",
+	"type": "module",
 	"version": "1.0",
 	"author": "Denys Yaroshenko <denys.yaroshenko.mail@gmail.com> (https://github.com/perhamik/)",
-	"license": "ISC",
+	"license": "MIT",
+	"private": true,
+	"engines": {
+		"node": ">19"
+	},
+	"scripts": {
+		"start": "next start",
+		"prelint": "npx prettier . --ignore-unknown --write",
+		"lint": "next lint",
+		"postlint": "tsc",
+		"prebuild": "npm run lint",
+		"build": "next build",
+		"dev": "next dev"
+	},
 	"dependencies": {
 		"next": "latest",
 		"react": "latest",
@@ -13,29 +27,13 @@
 		"@types/node": "latest",
 		"@types/react": "latest",
 		"@types/react-dom": "latest",
-		"bun-framework-next": "latest",
-		"bun-types": "latest",
+		"@typescript-eslint/parser": "latest",
+		"dotenv": "latest",
 		"eslint": "latest",
 		"eslint-config-next": "latest",
 		"prettier": "latest",
+		"server-only": "latest",
+		"tslib": "latest",
 		"typescript": "latest"
-	},
-	"scripts": {
-		"clean": "sh clean.sh",
-		"start": "next start",
-		"dev": "next dev",
-		"dev:bun": "bun dev",
-		"build": "next build",
-		"pretty": "prettier --write .",
-		"lint": "next lint",
-		"typecheck": "tsc",
-		"docker:build": "docker build -t next-build .",
-		"docker:run": "docker run --name project-dev -dp 3000:3000 next-build",
-		"docker:stop": "docker stop project-dev",
-		"docker:rm": "docker rm project-dev",
-		"docker": "yarn docker:build && yarn docker:run"
-	},
-	"config": {
-		"port": "3000"
 	}
 }

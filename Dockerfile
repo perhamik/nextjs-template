@@ -1,21 +1,34 @@
-FROM node:16-alpine
+# syntax=docker/dockerfile:1
+ARG NODE_TAG=21.5.0-alpine3.19
 
-ENV PORT 3000
+FROM node:${NODE_TAG} as builder
+RUN npm install pnpm@latest -g
+WORKDIR /app
 
-# Create app directory
-RUN mkdir -p /usr/src/app
-COPY package*.json /usr/src/app/
+COPY package.json yarn.* package-* pnpm-lock.* ./
+RUN pnpm install
+COPY ./app ./app
+COPY ./public ./public
+COPY ./src ./src
+COPY .env index.d.ts middleware.ts next-env.d.ts next.config.js tsconfig.json tsconfig.web.json ./
+RUN pnpm build
 
-# Installing dependencies
-WORKDIR /usr/src/app
-RUN yarn install
+FROM node:${NODE_TAG} as runner
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
 
-# Copying source files
-COPY . .
+RUN npm install pm2@5.3.0 -g
 
-# Building app
-RUN yarn build
+WORKDIR /app
+
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/yarn.* /app/package-* /app/pnpm-lock.* .
+COPY --from=builder --chown=nextjs:nodejs /app/package.json /app/.env /app/next.config.js .
+USER nextjs
 EXPOSE 3000
 
-#Run dev server
-CMD ["yarn", "run", "start"]
+HEALTHCHECK --interval=5m --timeout=3s \
+CMD node server.js
+CMD ["pm2-runtime", "node server.js"] 

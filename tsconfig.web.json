@@ -1,0 +1,55 @@
+{
+	"compilerOptions": {
+		/* Basic */
+		"allowJs": false,
+		"checkJs": false,
+		"declaration": true,
+		"sourceMap": true,
+		"removeComments": true,
+		//"noEmit": true,
+		"noEmitHelpers": true,
+		//"importHelpers": true,
+		"downlevelIteration": true,
+		"isolatedModules": true,
+		"disableSizeLimit": true,
+		//"verbatimModuleSyntax": true,
+
+		/* Strict */
+		"strict": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+		"strictBindCallApply": true,
+		"strictFunctionTypes": true,
+		"strictPropertyInitialization": true,
+
+		/* Additional Check */
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUncheckedIndexedAccess": true,
+		//"noPropertyAccessFromIndexSignature": true,
+		"useUnknownInCatchVariables": true,
+
+		// "rootDirs": [],
+		// "typeRoots": [],
+		// "types": [],
+		"allowSyntheticDefaultImports": true,
+
+		/* Source Map Options */
+		/*"sourceRoot": "./",*/
+		/*"mapRoot": "./",*/
+		/*"inlineSourceMap": true,*/
+		/*"inlineSources": true,*/
+
+		/* Misc */
+
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"esModuleInterop": false,
+		"resolveJsonModule": true,
+		"incremental": true
+	}
+}
